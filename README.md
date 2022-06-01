@@ -1,1 +1,1 @@
-Nginx-Guincorn-Django in Docker Compose
+Nginx-Gunicorn-Django in Docker Compose
