@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row bg-info">
+    {% for course in courses %}
+        <div class="col-md-4 mt-2">
+            <div class="card text-center p-2 mb-2 bg-white text-black">
+                <h5 class="card-title">{{ course.title }}</h5>
+                <img class="card-img-top" src="{{MEDIA_URL}}{{course.image}}" alt="screen">
+                <div class="card-body">
+                    <p>{{ course.description_public }}</p>
+                    <p>{{ course.announcement }}</p>
+                    <div>
+                        <a href="{% url 'course:course' course.pk %}" class="btn btn-info">I would like to know more</a>               
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<header>
+    <style>
+        p {color: rgb(83, 83, 83);
+        }
+    </style>
+</header>
+    <div class="container bg-info">
+        <div class="row">
+            <div class="col-md-5">
+                <img class="card-img-top p-2" src="{{ MEDIA_URL }}{{ article.extra_image }}" alt="screen">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <div class="p-2 mb-2 bg-white ">
+                        <h5 class="card-text">{{ article.title }}</h5>
+                        <p class="card-text">{{ article.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            {% for comment in comments %}
+                <div class="col-10 bg-light m-1">
+                    <h6>Commented by user: {{ comment.user.username }}</h6>
+                    <p>{{ comment.text }}</p>
+                </div>
+                
+            {% endfor %}
+        <div class="row p-2">
+            <form method="post">
+                {% csrf_token %}
+                <div class="col-6">{{ form.as_p }}</div>
+                <input type="submit" class="col-9 btn btn-dark ml-3 p-1" value="Commit">
+            </form>     
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<header>
+    <style>
+        p {color:black;
+            margin: 2px;
+            text-align: right ;}
+        .my_link {color:#17929b;
+            margin-left: 5px;
+            text-align: left;
+            width: 100%;
+            padding-left: 15;
+        }
+    </style>
+</header>
+<div class="container bg-light p-4">
+    <div class="row col-6 ml-3 text-dark justify-content-start"><h4>Login</h4></div>
+    <div class="row p-3 ml-2">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="row justify-content-end p-3">
+                <input type="submit" class="col-12 mt-1 btn btn-info p-1" value="Login">
+            </div>
+        </form>
+    </div>
+    
+    <div class="w-100"></div>
+    
+    <div class="row col-6 m-2">
+        <a class="my_link" href="{% url 'users:dashboard' %}">Back to dashboard</a>
+    </div>
+    <div class="row col-6 m-2">
+        <a class="my_link" href="{% url 'password_reset' %}">Password reset with a link</a>
+    </div>
+    <div class="row col-6 m-2">
+        <a class="my_link" href="{% url 'users:register' %}">Registration a new user</a>
+    </div>
+
+</div>
+{% endblock %}

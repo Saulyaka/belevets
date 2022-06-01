@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row bg-info">
+    {% for pleinair in pleinairs %}
+        <div class="col-md-4 mt-2">
+            <div class="p-3 mb-2 bg-white text-black">
+                <h5 class="card-title">{{ pleinair.title }}</h5>
+                <img class="card-img-top" src="{{MEDIA_URL}}{{pleinair.image}}" alt="screen">
+                <div class="card-body">
+                    <p class="card-text">{{ pleinair.advt }}</p>
+                    <p><span><b>Start: </b></span><span class="card-text">{{ pleinair.start }}</span></p>
+                    <p><span><b>Duration: </b></span><span class="card-text">{{ pleinair.duration }}</span></p>
+                    <p><span><b>Place: </b></span><span class="card-text">{{ pleinair.place }}</span></p>
+                    <a href="{% url 'pleinair:details' pleinair.pk %}" class="btn btn-info">Details</a>               
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

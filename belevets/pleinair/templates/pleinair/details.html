@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="row bg-info">
+        <div class="row">
+            <div class="col-md-5">
+                <img class="card-img-top p-3" src="{{MEDIA_URL}}{{pleinair.image}}" alt="screen">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <div class="p-2 mb-2 bg-white ">
+                        <p class="card-text">{{ pleinair.title }}</p>
+                        <p class="card-text">{{ pleinair.description }}</p> 
+                        <p class="card-text"><b>Start: </b> {{ pleinair.start }}</p> 
+                        <p class="card-text"><b>Duration: </b> {{ pleinair.duration }}</p> 
+                        <p class="card-text"><b>Place: </b>{{ pleinair.place }}</p> 
+                        <p class="card-text"><b>Price: </b>{{ pleinair.price }}</p>
+                        <a href="{% url 'contact:pleinair' pleinair.pk %}" class="btn btn-info">Participate</a> <!--TODO Send to contact_us with message pleinari.title-->           
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+{% endblock %}

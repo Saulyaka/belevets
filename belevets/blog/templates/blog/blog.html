@@ -1,0 +1,19 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row bg-info">
+    {% for article in blog %}
+        <div class="col-md-4 mt-2">
+            <div class="p-3 mb-2 bg-white text-black">
+                <h5 class="card-title">{{ article.title }}</h5>
+                    <img class="card-img-top" src="{{MEDIA_URL}}{{article.image}}" alt="screen">
+                <div class="card-body">
+                    <p class="card-text">{{ article.text|slice:":100" }}...</p>
+                    <p class="card-text">likes: {{ article.likes }}</p>
+                    <a href="{% url 'blog:article' article.pk %}" class="btn btn-info">Read more</a>                                
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

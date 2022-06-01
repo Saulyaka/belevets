@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container bg-light p-4">
+    <div class="row justify-content-center">
+        <div class="col-8 col-sm-12">
+            <h5 class="text-center text-dark">{{ course.title }}</h5>
+            <p class="text-center text-dark">{{ course.description_public }}</p>
+            <div id="elem" class="embed-responsive embed-responsive-16by9">    
+                <video controls width="250" oncontextmenu="return false;" controlsList="nodownload">
+                    <source src="{{ MEDIA_URL }}{{ course.video }}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+        <a href="{% url 'users:add_order' course.pk %}" class="btn btn-info">Place to my order - {{ course.price }} €</a>
+    </div>
+    <div class="row justify-content-center">
+        {% for section in sections %}
+            <div class="col-8 col-sm-12 p-5">
+                <h5 class="p-3">{{ section.title }}</h5>       
+                {% for lesson in section.lessons %}
+                    <h6 class="p-3">{{ lesson.title }}</h6>
+                    <div class="card" style="width: 25rem;">
+                        <img class="card-img-center p-2" src="{{ MEDIA_URL }}{{ lesson.image }}" alt="screen">
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="row justify-content-center">
+        <a href="{% url 'users:add_order' course.pk %}" class="btn btn-info">Place to my order - {{ course.price }} €</a>
+    </div> 
+</div>
+
+{% endblock %}

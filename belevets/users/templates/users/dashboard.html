@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% load static %}
+<header>
+    <style>
+        p {color:black;
+            margin: 2px;
+            text-align: left ;}
+        .my_link {color:#17929b;
+            margin-left: 5px;
+            text-align: left;
+            width: 100%;
+            padding-left: 15;
+        }
+        li {color:#17929b;
+            list-style-type: none;
+            text-align: left;
+            padding-left: none;
+        }
+    </style>
+</header>
+
+<div class="container p-20 m-20 d-flex justify-content-center">
+    <div class="col bg-light">
+        <div class="row p-2 text-dark ">Welcome,&nbsp&nbsp<b>{{ user.username|default:"Guest" }}!</b></div>
+        <div class="w-100"></div>
+        {% if user.is_authenticated %}
+            <div class="row mt-2">
+                <div class="col-2">My active courses:</div>
+                <div class="col-6">
+                {% for course in courses %}
+                    <p>{{ course }}</p>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2">My order:</div>
+                <div class="col-6">
+                {% for course in ordered_courses %}
+                    <p>{{ course }}</p>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="row mt-3">
+                <p>Total to pay: {{ amount }} €</p>
+            </div>
+            <div class="row mt-3 col-4 mb-2 align-items-start">
+                <div class="m-3">
+                    <a href="{% url 'users:checkout' %}" class="btn btn-info p-2">Pay and checkout</a>
+                </div>
+                <div class="m-3">
+                    <a href="{% url 'users:cancel' %}" class="btn btn-dark p-2">Cancel order</a>
+                </div>
+            </div>
+            <div class="row mt-3"><p><a class="my_link" href="{% url 'password_change' %}">Change password</a></p></div>
+            <div class="row mt-3 mb-3"><p><a class="my_link" href="{% url 'logout' %}">Logout</a></p></div>
+        {% else %}
+        <div class="w-100"></div>
+        <div class="row mt-2 align-items-start">
+            <div class="col-sm-1 m-3">
+                <a href="{% url 'login' %}" class="btn btn-info p-2"> Login </a>
+            </div>
+            <div class="col-sm-3 m-3">
+                <a href="{% url 'users:register' %}" class="btn btn-dark p-2">Sign in</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
