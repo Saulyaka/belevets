@@ -1,1 +1,1 @@
-# django_pg_docker
+Nginx-Guincorn-Django in Docker Compose
