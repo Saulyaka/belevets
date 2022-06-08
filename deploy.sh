@@ -1,3 +1,3 @@
 #!/bin/sh     
 sudo git pull origin master
-docker-compose up --force-recreate
+sudo docker-compose up --force-recreate
