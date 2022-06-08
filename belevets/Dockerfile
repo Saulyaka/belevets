@@ -3,7 +3,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /code
-COPY . /code/
+COPY . code/
 
 RUN pip install --upgrade pip && \
     apk add --update --no-cache postgresql-client && \
