@@ -592,3 +592,4 @@ data/
 *.env
 *.conf
 *.db
+.github/
