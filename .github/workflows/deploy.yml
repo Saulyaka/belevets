@@ -9,9 +9,9 @@ start:
 runs-on: cpe:2.3:o:amazon:amazon_linux:2
 
 steps:
-	- uses: actions/checkout@v2
+	uses: actions/checkout@v2
 
-	- name: AWS SSM Send Command
+	name: AWS SSM Send Command
 	uses: peterkimzz/aws-ssm-send-command@1.0.1
 	with:
 		aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID  }}
