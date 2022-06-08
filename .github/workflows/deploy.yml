@@ -6,14 +6,15 @@ branches: [master]
 paths-ignore: ['docker-compose.dev.yml', 'Dockerfile.dev']
 
 jobs:
-	runs-on: ubuntu-latest
+	check-dist:
+		runs-on: ubuntu-latest
 
-	steps:
-		- name: Checkout code
-		uses: actions/checkout@v2
+		steps:
+			- name: Checkout code
+			uses: actions/checkout@v2
 	
-		- name: AWS SSM Send Command
-		uses: peterkimzz/aws-ssm-send-command@1.0.1
+			- name: AWS SSM Send Command
+			uses: peterkimzz/aws-ssm-send-command@1.0.1
 		with:
 			aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID  }}
 			aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
