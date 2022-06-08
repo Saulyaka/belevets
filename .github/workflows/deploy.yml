@@ -1,10 +1,10 @@
 name: Deploy using AWS SSM Send-Command 
 
 on:
-push:
-branches: [master]
-paths-ignore: ['docker-compose.dev.yml', 'Dockerfile.dev']
-workflow_dispatch:
+	push:
+		branches: [master]
+		paths-ignore: ['docker-compose.dev.yml', 'Dockerfile.dev']
+	workflow_dispatch:
 
 jobs:
 	check-dist:
