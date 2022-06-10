@@ -3,3 +3,4 @@ psycopg2>=2.8,<2.9
 boto3>=1.4.4
 django-storages
 gunicorn==20.1.0
+django-ses
