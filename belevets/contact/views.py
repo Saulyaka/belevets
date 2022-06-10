@@ -61,8 +61,8 @@ class ContactFormView(SingleObjectMixin, FormView):
             send_mail(
                 'From BELEVETS: Contact me',
                 contact.get_data(),
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.MANAGER_EMAIL],
+                'verified_addres',
+                ['verified_addres'],
                 fail_silently=False,
             )
         else:
