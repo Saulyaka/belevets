@@ -151,6 +151,10 @@ LOGOUT_REDIRECT_URL = 'base:index'
 # Email settings
 MANAGER_EMAIL = os.environ.get('MANAGER_EMAIL')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 25
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'alla.popova.rus@gmail.com'
 
 # AWS SES settings
 EMAIL_BACKEND = 'django_ses.SESBackend'
