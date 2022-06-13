@@ -158,7 +158,8 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 
 # AWS SES settings
 EMAIL_BACKEND = 'django_ses.SESBackend'
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_SES_SECRET_ACCESS_ID = os.environ.get('AWS_SES_SECRET_ACCESS_ID')
+AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_SES_REGION_NAME = os.environ.get('AWS_SES_REGION_NAME')
 AWS_SES_REGION_ENDPOINT = os.environ.get('AWS_SES_REGION_ENDPOINT')
 
@@ -168,7 +169,7 @@ EMAIL_USE_SSL = False
 
 # AWS Amazon Storage
 """DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'"""
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_S3_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_DEFAULT_ACL = None
