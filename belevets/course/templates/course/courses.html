@@ -8,8 +8,7 @@
                 <h5 class="card-title">{{ course.title }}</h5>
                 <img class="card-img-top" src="{{MEDIA_URL}}{{course.image}}" alt="screen">
                 <div class="card-body">
-                    <p>{{ course.description_public }}</p>
-                    <p>{{ course.announcement }}</p>
+                        <p>{{ course.announcement }}</p>
                     <div>
                         <a href="{% url 'course:course' course.pk %}" class="btn btn-info">I would like to know more</a>               
                     </div>
