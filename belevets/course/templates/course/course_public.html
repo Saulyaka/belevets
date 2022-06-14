@@ -19,7 +19,7 @@
             <a href="#" class="btn btn-info">Free course</a>
         {% else %}
             <a href="{% url 'users:add_order' course.pk %}" class="btn btn-info">Place to my order - {{ course.price }} €</a>
-        {% enfif %}
+        {% endfif %}
     </div>
     <div class="row justify-content-center">
         {% for section in sections %}
