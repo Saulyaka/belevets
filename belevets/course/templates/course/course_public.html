@@ -15,11 +15,11 @@
         </div>
     </div>
     <div class="row mt-5 justify-content-center">
-        {{% if course.price =! 0 %}}
+        {% if course.price =! 0 %}
             <a href="{% url 'users:add_order' course.pk %}" class="btn btn-info">Place to my order - {{ course.price }} €</a>
-        {{% else %}}
+        {% else %}
             <a href="#" class="btn btn-info">Free course</a>
-        {{% enfif %}}
+        {% enfif %}
     </div>
     <div class="row justify-content-center">
         {% for section in sections %}
