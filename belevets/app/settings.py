@@ -148,7 +148,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'users:dashboard'
 LOGOUT_REDIRECT_URL = 'base:index'
 
-# Email settings 
+# Email settings
 MANAGER_EMAIL = os.environ.get('MANAGER_EMAIL')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
