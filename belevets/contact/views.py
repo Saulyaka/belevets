@@ -92,7 +92,7 @@ class PleinAirDetailView(ContactDetailView):
         name = forms.CharField(max_length=50)
         email = forms.EmailField()
         mobile = forms.CharField()
-        message_text = f"I would like to participate in plein air {pleinair.title} on {pleinair.start}"
+        message_text = f"I would like to participate in {pleinair.title} on {pleinair.start}"
         _obj = forms.Textarea(attrs={"rows": 5, "cols": 30, 'placeholder': message_text})
         # _obj.initial= message_text
 

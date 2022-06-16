@@ -1,4 +1,4 @@
 #!/bin/sh     
 sudo git pull https://github.com/saulyaka/belevets.git
-docker-compose down -v
-sudo docker-compose up --build
+sudo docker-compose down -v
+sudo docker-compose -f belevets/docker-compose.yml up --build

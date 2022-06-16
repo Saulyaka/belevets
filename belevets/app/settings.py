@@ -157,14 +157,14 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 
 # AWS SES settings
-EMAIL_BACKEND = 'django_ses.SESBackend'
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
 AWS_SES_REGION_NAME = os.environ.get('AWS_SES_REGION_NAME')
 AWS_SES_REGION_ENDPOINT = os.environ.get('AWS_SES_REGION_ENDPOINT')
 
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL')
 
 
 # AWS Amazon Storage
